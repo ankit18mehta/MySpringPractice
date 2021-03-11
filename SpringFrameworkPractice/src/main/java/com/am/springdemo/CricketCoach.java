@@ -1,7 +1,16 @@
 package com.am.springdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component("myCricketCoach")
+@Scope("prototype")
 public class CricketCoach implements Coach {
 
+    @Autowired
+    @Qualifier("luckyNumberFortuneService")
     private FortuneService fortuneService;
 
     // add new fields for emailAddress and team
@@ -32,7 +41,6 @@ public class CricketCoach implements Coach {
         this.team = team;
     }
 
-    // our setter method
     public void setFortuneService(FortuneService fortuneService) {
         System.out.println("CricketCoach: inside setter method - setFortuneService");
         this.fortuneService = fortuneService;

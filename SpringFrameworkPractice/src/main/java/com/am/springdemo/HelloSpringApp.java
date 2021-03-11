@@ -10,21 +10,23 @@ public class HelloSpringApp {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         // retrieve bean from spring container
-        Coach trackCoach = context.getBean("myCoach", Coach.class);
-        Coach baseballCoach = context.getBean("myNewCoach", Coach.class);
+        Coach trackCoach = context.getBean("trackCoach", Coach.class);
+        Coach baseBallCoach = context.getBean("baseballCoach", Coach.class);
         Coach cricketCoach = context.getBean("myCricketCoach", Coach.class);
 
         // call methods on the bean
+        System.out.println("Track Coach");
         System.out.println(trackCoach.getDailyWorkout());
         System.out.println(trackCoach.getDailyFortune());// HappyFortuneService Bean injected by Spring Container Using setter dependency Injection
-        System.err.println("BaseBall Coach");
-        System.out.println(baseballCoach.getDailyWorkout());
-        System.out.println(baseballCoach.getDailyFortune());// HappyFortuneService Bean injected by Spring Container Using constructor dependency Injection
-
-        System.err.println("Cricket Coach");
+        // call methods on the bean
+        System.out.println("BaseBall Coach");
+        System.out.println(baseBallCoach.getDailyWorkout());
+        System.out.println(baseBallCoach.getDailyFortune());// HappyFortuneService Bean injected by Spring Container Using setter dependency Injection
+        // call methods on the bean
+        System.out.println("Cricket Coach");
         System.out.println(cricketCoach.getDailyWorkout());
-        System.out.println(cricketCoach.getDailyFortune());// HappyFortuneService Bean injected by Spring Container Using constructor dependency Injection
-        // close the context
+        System.out.println(cricketCoach.getDailyFortune());// HappyFortuneService Bean injected by Spring Container Using setter dependency Injection
+
         context.close();
     }
 

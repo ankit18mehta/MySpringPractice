@@ -3,10 +3,10 @@ package com.am.springdemo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HappyFortuneService implements FortuneService {
+public class LuckyNumberFortuneService implements FortuneService {
 
     public String getFortune() {
-        return "Today Is your Lucky Day";
+        return "Your Lucky Number Is 7";
     }
 
 }

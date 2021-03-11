@@ -6,17 +6,5 @@
 	xmlns="http://www.springframework.org/schema/beans">
 
 	<!-- Define your beans here -->
-
-
-	<!-- define the dependency -->
-
-
-
-	<bean class="com.am.springdemo.TrackCoach" id="myCoach">
-</bean>
-
-	
-<bean class="com.am.springdemo.FortuneService" id="myFortune">
-	</bean>
-
+<context:component-scan base-package="com.am.springdemo"></context:component-scan>
 </beans>
