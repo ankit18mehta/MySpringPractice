@@ -1,10 +1,7 @@
 package com.am.springdemo;
 
-public class FortuneService implements DailyFortune {
+public interface FortuneService {
 
-    public String getDailyFortune() {
-        // TODO Auto-generated method stub
-        return "Lucky Number 7";
-    }
+    public String getFortune();
 
 }
