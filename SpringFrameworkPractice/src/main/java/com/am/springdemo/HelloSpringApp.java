@@ -1,13 +1,14 @@
 package com.am.springdemo;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class HelloSpringApp {
 
     public static void main(String[] args) {
 
         // load the spring configuration file
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+                SportsConfig.class);
 
         // retrieve bean from spring container
         Coach trackCoach = context.getBean("trackCoach", Coach.class);
